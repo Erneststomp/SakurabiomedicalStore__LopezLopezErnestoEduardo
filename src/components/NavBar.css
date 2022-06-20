@@ -1,0 +1,47 @@
+.topnav {
+    max-width: 1920px;
+    background-color: rgb(228, 57, 57);
+    overflow: hidden;
+    max-height: 400px;
+  }
+
+  
+.NavBar__Fromat {
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+}
+
+.NavBar__Fromat a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.NavBar__Fromat a:hover {
+  background-color: #aa0404;
+  color: rgb(255, 255, 255);
+}
+
+.NavBar__Fromat .icon {
+  display: none;
+}
+
+.NavBar__Align{
+    display: inline-flex;
+}
+
+.image__size{
+
+    width: 300px;
+    padding-left: 5%;
+    padding-right: 50%;
+}
+.NavBar__Container{
+    display: flex;
+}
