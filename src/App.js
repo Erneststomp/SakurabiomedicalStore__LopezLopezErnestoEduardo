@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
+import Itemlistcontainer from './components/Itemlistcontainer/Itemlistcontainer';
 
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
+      <NavBar/>
+      <Itemlistcontainer greeting='Hola'/>
     </div>
   );
 }

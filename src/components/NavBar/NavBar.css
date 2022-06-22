@@ -36,12 +36,13 @@
     display: inline-flex;
 }
 
-.image__size{
+.logo__size{
 
     width: 300px;
     padding-left: 5%;
-    padding-right: 50%;
+    padding-right: 40%;
 }
 .NavBar__Container{
     display: flex;
 }
+
