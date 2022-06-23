@@ -5,14 +5,6 @@
     max-height: 400px;
   }
 
-  
-.NavBar__Fromat {
-  overflow: hidden;
-  text-align: center;
-  padding-bottom: 1.5em;
-  padding-top: 1.5em;
-}
-
 .NavBar__Fromat a {
   float: left;
   display: block;
@@ -26,15 +18,10 @@
 .NavBar__Fromat a:hover {
   background-color: #aa0404;
   color: rgb(255, 255, 255);
+  
 }
 
-.NavBar__Fromat .icon {
-  display: none;
-}
 
-.NavBar__Align{
-    display: inline-flex;
-}
 
 .logo__size{
 
@@ -42,7 +29,5 @@
     padding-left: 5%;
     padding-right: 40%;
 }
-.NavBar__Container{
-    display: flex;
-}
+
 
