@@ -1,0 +1,12 @@
+.displaybutton{
+    display: inline-flex;
+    margin-bottom: 1cm;
+    align-items: baseline;
+    border: 1px;
+    border-color: black;
+}
+.boton{
+    width: 100px;
+    margin-left: 1cm;
+    margin-right: 1cm;
+}

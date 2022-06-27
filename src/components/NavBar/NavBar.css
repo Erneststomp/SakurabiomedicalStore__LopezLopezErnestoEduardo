@@ -18,16 +18,26 @@
 .NavBar__Fromat a:hover {
   background-color: #aa0404;
   color: rgb(255, 255, 255);
-  
 }
-
-
 
 .logo__size{
-
     width: 300px;
     padding-left: 5%;
-    padding-right: 40%;
+    padding-right: 2cm;
 }
 
-
+.items_align{
+  display: flex;
+  align-items: baseline;
+}
+.brand__baseline{
+  position: relative;
+  align-items: baseline;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.navbar_position{
+  align-items: baseline;
+  margin-top: auto;
+  margin-bottom: auto;
+}
