@@ -1,22 +1,37 @@
 import React from 'react'
-import Logo2 from "../assets/Images/desfibrilador.webp"
-import Itemcount from '../ItemCount/Itemcount';
-import Swal from 'sweetalert2'
 
-const itemlistcontainer = ({greeting}) => {
-  let Stock=10
+import Itemlist from '../Items/itemlist';
 
-  const onAdd=(number)=>{
-    Swal.fire('Agregaste '+ number+' a tu Carrito')
-  }
+const Itemlistcontainer = ({greeting}) => {
+  const [articulos,setArticulos]=React.useState([]);
+  const productos = [
+    {id:1 , nombre: 'Desfibrilador', precio:200},
+    {id:2 , nombre: 'Carro Rojo', precio:300},
+    {id:3 , nombre: 'Escalpelo', precio:400}            
+  ]
+  
+            
+
+    const llamada = new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        resolve(productos)
+      },2000)
+    
+    })
+
+    React.useEffect(() => {
+    llamada
+      .then(resolve=>setArticulos(resolve))
+    }, [])
+
   return (
     <div>
-      <p>{greeting}</p>    
+      <h1>{greeting}</h1>    
       <br/>  
-      <img  src={Logo2} alt="" width={200}/> 
-      <Itemcount  Stock={Stock} initial={1} onAdd={onAdd}/>
+
+      <Itemlist articulos={articulos}/>
     </div>
   )
 }
 
-export default itemlistcontainer
+export default Itemlistcontainer
