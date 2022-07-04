@@ -3,6 +3,8 @@ import ItemDetail from '../../ItemDetailContainer/ItemDetail';
 
 const ItemDetailContainer = () => {
   const [productDetail,setProductDetail]=React.useState({});
+
+
     useEffect(()=>{
         const getProducts = async ()=>{
             try {
@@ -15,8 +17,15 @@ const ItemDetailContainer = () => {
                 console.log(error)
             }
         }
-        getProducts()
+        setTimeout(()=>{
+          getProducts()
+        },2000)
+
+        
     },[])
+
+
+    
   return (
     <div>
         <ItemDetail product={productDetail}/>

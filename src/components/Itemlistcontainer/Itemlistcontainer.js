@@ -9,6 +9,9 @@ const ItemListContainer = ({greeting}) => {
     {id:3 , nombre: 'Escalpelo', precio:400, pictureurl: 'https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_628/https://yoreparoacademy.com/wp-content/uploads/2020/07/11-3.png'}            
   ]
   
+  
+
+  
     const llamada = new Promise((resolve, reject)=>{
       setTimeout(()=>{
         resolve(productos)
