@@ -1,6 +1,5 @@
 import React from 'react'
-import Logo2 from "../assets/Images/desfibrilador.webp"
-import Itemcount from '../ItemCount/Itemcount';
+import Itemcount from '../ItemCount/ItemCount';
 import Swal from 'sweetalert2'
 
 const Items = ({item}) => {

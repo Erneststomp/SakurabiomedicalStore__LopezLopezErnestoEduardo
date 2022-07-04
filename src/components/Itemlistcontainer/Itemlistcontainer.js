@@ -1,8 +1,7 @@
 import React from 'react'
+import Itemlist from '../Items/ItemList';
 
-import Itemlist from '../Items/itemlist';
-
-const Itemlistcontainer = ({greeting}) => {
+const ItemListContainer = ({greeting}) => {
   const [articulos,setArticulos]=React.useState([]);
   const productos = [
     {id:1 , nombre: 'Desfibrilador', precio:200, pictureurl: 'https://cdn.shopify.com/s/files/1/1111/2076/products/Capturadepantalla2020-04-27alas14.54.06_1024x1024.png?v=1588065471'},
@@ -10,8 +9,6 @@ const Itemlistcontainer = ({greeting}) => {
     {id:3 , nombre: 'Escalpelo', precio:400, pictureurl: 'https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_628/https://yoreparoacademy.com/wp-content/uploads/2020/07/11-3.png'}            
   ]
   
-            
-
     const llamada = new Promise((resolve, reject)=>{
       setTimeout(()=>{
         resolve(productos)
@@ -34,4 +31,4 @@ const Itemlistcontainer = ({greeting}) => {
   )
 }
 
-export default Itemlistcontainer
+export default ItemListContainer

@@ -1,7 +1,7 @@
 import React from 'react'
-import Item from './items'
+import Item from './Items'
 
-const itemlist = ({articulos}) => {
+const ItemList = ({articulos}) => {
   return (
     <div style={{display:'flex'}}>
         {articulos?.map(item=><Item key={item.id} item={item}/>)}
@@ -10,4 +10,4 @@ const itemlist = ({articulos}) => {
   )
 }
 
-export default itemlist
+export default ItemList
