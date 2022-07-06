@@ -1,31 +1,26 @@
-import React, { useEffect } from 'react'
-import ItemDetail from '../../ItemDetailContainer/ItemDetail';
+import React, { useEffect, useState } from 'react'
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-  const [productDetail,setProductDetail]=React.useState({});
-
+  const [productDetail,setProductDetail]=useState({});
+  const params = useParams()
+  console.log(params)
 
     useEffect(()=>{
         const getProducts = async ()=>{
             try {
-            const response = await fetch('https://rickandmortyapi.com/api/character/2')
+            const response = await fetch(`https://fakestoreapi.com/products/${params.productId}`)
             const data = await response.json();
             setProductDetail(data)
-            .then(res=>res.json())
-            .then(json=>console.log(json))
             } catch (error) {
                 console.log(error)
             }
         }
         setTimeout(()=>{
           getProducts()
-        },2000)
-
-        
+        },1000)
     },[])
-
-
-    
   return (
     <div>
         <ItemDetail product={productDetail}/>
