@@ -8,7 +8,7 @@ const ItemDetail = ({product}) => {
   }
 
   return (
-    <div style={{maxwidth:'1920px', paddingLeft:'25%', paddingRight:'25%', paddingTop:'1%'}}>
+    <div style={{paddingLeft:'25%', paddingRight:'25%', paddingTop:'1%'}}>
       <div style={{width:'100%', maxWidth:'720px', display:'grid-column'}}> 
           <div className="card">
             <h2>{product.title}</h2>
