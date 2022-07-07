@@ -1,10 +1,13 @@
 import React from 'react'
 import Item from './Items'
+import './Items.css'
+const ItemList = ({productDetail}) => {
 
-const ItemList = ({articulos}) => {
   return (
-    <div style={{display:'flex'}}>
-        {articulos?.map(item=><Item key={item.id} item={item}/>)}
+    <div className='grid-1' style={{display:'grid', paddingLeft:'suto',paddingRight:'2%'}}>
+         {productDetail.map(producto => {
+            return <Item product={producto} key={producto.id}/>
+        })}
 
     </div>
   )

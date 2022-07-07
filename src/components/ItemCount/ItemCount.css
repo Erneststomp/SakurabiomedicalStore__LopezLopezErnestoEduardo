@@ -2,7 +2,7 @@
     display: inline-flex;
     margin-bottom: 1cm;
     align-items: baseline;
-    border: 1px;
+    border: 10px;
     border-color: black;
 }
 .boton{
@@ -12,7 +12,7 @@
 }
 
 .boton2{
-    width: 70%;
+    width: 50%;
     margin-left: 1cm;
     margin-right: 1cm;
 }
