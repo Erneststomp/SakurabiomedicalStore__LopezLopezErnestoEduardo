@@ -17,9 +17,9 @@ const ItemDetailContainer = () => {
                 console.log(error)
             }
         }
-        setTimeout(()=>{
+
           getProducts()
-        },1000)
+
     },[])
   return (
     <div>

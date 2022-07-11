@@ -25,11 +25,12 @@ import { Link } from "react-router-dom";
                         <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/men's clothing">Men</Link></li>
                         <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/women's clothing">Women</Link></li>
                         <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/jewelery">Jewelery</Link></li>
-                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/"><CartWidget/></Link></li>
+                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/cart"><CartWidget/></Link></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <br></br>
     </div>
     )
  }

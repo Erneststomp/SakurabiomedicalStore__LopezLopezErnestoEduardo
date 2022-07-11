@@ -1,7 +1,7 @@
 .topnav {
     background-color: rgb(228, 57, 57);
     overflow: hidden;
-    max-height: 400px;
+    max-height: 450px;
   }
 
 .NavBar__Fromat a {
@@ -20,7 +20,7 @@
 }
 
 .logo__size{
-    width: 300px;
+    width: 250px;
     padding-left: 5%;
     padding-right: 2cm;
 }

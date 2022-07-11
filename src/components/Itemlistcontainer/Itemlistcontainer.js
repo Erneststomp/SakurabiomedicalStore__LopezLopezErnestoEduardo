@@ -20,9 +20,9 @@ const ItemListContainer = ({greeting}) => {
                 console.log(error)
             }
         }
-        setTimeout(()=>{
+
           getProducts()
-        },1000)
+   
 
     },[])
 
