@@ -9,10 +9,10 @@ import { Link } from "react-router-dom";
     <div className="topnav" id="myTopnav">
         <nav className="navbar navbar-expand-sm navbar-dark  gradient-custom__nav" id="navbar">
             <div className="container-fluid">
-                <a className="navbar-brand">
+                <div className="navbar-brand">
                 <Link to="/">
                 <img className="logo__size" alt="" src={Logo}/>   </Link>
-                </a>
+                </div>
                 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
