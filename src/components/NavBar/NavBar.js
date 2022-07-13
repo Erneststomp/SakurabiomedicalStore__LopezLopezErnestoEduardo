@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import './NavBar.css'
 import Logo from "../assets/Images/sakura_biomedical-03.png";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import { Shop } from "../Context/context";
+
 
  const NavBar = () => { 
+    const {estadoA} = useContext(Shop)
     return(
     <div className="topnav" id="myTopnav">
         <nav className="navbar navbar-expand-sm navbar-dark  gradient-custom__nav" id="navbar">
@@ -25,7 +28,7 @@ import { Link } from "react-router-dom";
                         <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/men's clothing">Men</Link></li>
                         <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/women's clothing">Women</Link></li>
                         <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/jewelery">Jewelery</Link></li>
-                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/cart"><CartWidget/></Link></li>
+                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/cart"><CartWidget style={{position:'absolute'}}/><div style={{display:'fixed', position:'absolute',padding:'0', margin:'0',color:'white'}}>{estadoA}</div></Link> </li>
                     </ul>
                 </div>
             </div>

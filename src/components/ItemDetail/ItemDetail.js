@@ -1,17 +1,26 @@
 import Itemcount from '../ItemCount/ItemCount'
 import Swal from 'sweetalert2'
 import {useNavigate} from "react-router-dom";
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { Shop } from '../Context/context';
 
 const ItemDetail = ({product}) => {
   const navigate = useNavigate();
   const [agregados, setAgregados]=useState(0);
+  const {addItem}= useContext(Shop)
+  const{cart}=useContext(Shop)
+  const {setEstadoA}= useContext(Shop)
   const onAdd=(number)=>{
     Swal.fire('Agregaste '+ number+' a tu Carrito')
-    setAgregados(number)}
+    setAgregados(number)
+    setEstadoA(cart.length+1)
+    addItem(product,number)
+  }
   const IrACarrito =()=>{
     navigate('/Cart')
   }
+ 
+
 
   return (
     <div style={{paddingLeft:'25%', paddingRight:'25%', paddingTop:'1%'}}>
@@ -31,8 +40,6 @@ const ItemDetail = ({product}) => {
                 :
                 <button onClick={IrACarrito}>  Ir a Carrito</button>
               }
-                
-
             </div>
           </div>
       </div>

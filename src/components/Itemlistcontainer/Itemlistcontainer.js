@@ -15,15 +15,11 @@ const ItemListContainer = ({greeting}) => {
             const data = await response.json();
             setProductDetail(data)
             setProductosFiltrados(data);
-            console.log(data)
             } catch (error) {
                 console.log(error)
             }
         }
-
-          getProducts()
-   
-
+      getProducts()
     },[])
 
     useEffect(() => {
