@@ -23,9 +23,10 @@ const Shopprovider = ({children}) => {
     const EliminateItem=(Eliminador)=>{
         
         const newarrayitems= cart.filter(product => {
-            return product.id != Eliminador;
+            return product.id !== Eliminador;
           });
           setCart(newarrayitems)
+          
 
     }
 
