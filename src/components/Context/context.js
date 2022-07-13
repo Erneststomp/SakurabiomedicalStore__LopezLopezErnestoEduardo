@@ -13,6 +13,13 @@ const Shopprovider = ({children}) => {
         setCart([...cart,{...product,quantity:ammount}])
         }
     }
+
+    const modifyItem=(product, number)=>{
+            product.quantity=number
+            setCart([...cart])
+    }
+
+
     const EliminateItem=(Eliminador)=>{
         
         const newarrayitems= cart.filter(product => {
@@ -32,7 +39,7 @@ const Shopprovider = ({children}) => {
     }
 
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem,cart,EliminateItem,EraseCart}} >
+        <Shop.Provider value={{estadoA, setEstadoA, addItem,cart,EliminateItem,EraseCart, modifyItem}} >
             {children}
         </Shop.Provider>
     )

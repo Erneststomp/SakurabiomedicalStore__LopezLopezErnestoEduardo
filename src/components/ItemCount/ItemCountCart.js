@@ -3,28 +3,44 @@ import './ItemCount.css'
 import Swal from 'sweetalert2'
 import { Shop } from '../Context/context';
 
-const ItemCountCart = ({Stock, initial, Eliminador}) => {
+const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
     
     const [number,setNumber] = useState(initial);
     const {EliminateItem}= useContext(Shop)
     const{cart}=useContext(Shop)
     const {setEstadoA}= useContext(Shop)
+    const {modifyItem}= useContext(Shop)
+    
     const cambioContadormas= () =>{
-        Stock>number?setNumber(number+1):Swal.fire({
-            icon: 'error',
-            text: 'Stock Maximo: '+number,
-          })
+        console.log(Stock)
+        console.log(number)
+          if(number<Stock){
+            setNumber(number+1)
+            modifyItem(producto,number+1)
+            
+        }else{
+            Swal.fire({
+                icon: 'error',
+                text: 'Stock Maximo: '+Stock,
+              })
+        }
           
     }
     const cambioContadormenos= () =>{
-        number>initial?setNumber(number-1):Swal.fire({
-            icon: 'error',
-            text: 'Compra minima: '+initial,
-          })
+        if( number>1){
+            setNumber(number-1)
+            modifyItem(producto,number-1)
+            
+        }else{
+            Swal.fire({
+                icon: 'error',
+                text: 'Compra minima: 1',
+              })
+        }
     }
 
-    const EliminarCartItem=()=>{
 
+    const EliminarCartItem=()=>{
 
         Swal.fire({
             title: 'Desea eliminar el articulo de su carrito?',
@@ -39,10 +55,8 @@ const ItemCountCart = ({Stock, initial, Eliminador}) => {
               Swal.fire(
                 'Deleted!',
                 'Your file has been deleted.',
-                'success',
-              ).then((result) => {
-                setEstadoA(cart.length+1)
-              })
+                'success',setEstadoA(cart.length-1)
+              )
             }
           })
 

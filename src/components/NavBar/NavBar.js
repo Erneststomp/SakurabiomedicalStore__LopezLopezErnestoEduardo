@@ -8,6 +8,7 @@ import { Shop } from "../Context/context";
 
  const NavBar = () => { 
     const {estadoA} = useContext(Shop)
+    
     return(
     <div className="topnav" id="myTopnav">
         <nav className="navbar navbar-expand-sm navbar-dark  gradient-custom__nav" id="navbar">

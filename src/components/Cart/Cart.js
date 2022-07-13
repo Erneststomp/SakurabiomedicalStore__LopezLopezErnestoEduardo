@@ -29,7 +29,7 @@ const EraseAll=()=>{
                                 <div className="card-body" >
                                   <p>Price: ${product.price}</p>
                                   <div>
-                                    <ItemCountCart  Stock={10} initial={product.quantity} onAdd={onAdd} Eliminador={product.id}/>
+                                    <ItemCountCart  Stock={10} initial={product.quantity} onAdd={onAdd} Eliminador={product.id} producto={product}/>
                                     </div>
                                 </div> 
                               </div>
