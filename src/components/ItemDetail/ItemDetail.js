@@ -9,13 +9,20 @@ const ItemDetail = ({product}) => {
   const [agregados, setAgregados]=useState(0);
   const {addItem}= useContext(Shop)
   const{cart}=useContext(Shop)
+
   const {setEstadoA}= useContext(Shop)
+  const {estadoA}= useContext(Shop)
+  const {setFinalAmmount}= useContext(Shop)
+  const {finalAmmount}= useContext(Shop)
+
   const onAdd=(number)=>{
     Swal.fire('Agregaste '+ number+' a tu Carrito')
     setAgregados(number)
-    setEstadoA(cart.length+1)
+    setEstadoA(parseInt(estadoA,10)+number)
+    setFinalAmmount(parseInt(finalAmmount,10)+(product.price*number))
     addItem(product,number)
   }
+
   const IrACarrito =()=>{
     navigate('/Cart')
   }

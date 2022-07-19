@@ -9,14 +9,17 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
     const {EliminateItem}= useContext(Shop)
     const{cart}=useContext(Shop)
     const {setEstadoA}= useContext(Shop)
+    const {estadoA}= useContext(Shop)
     const {modifyItem}= useContext(Shop)
-    
+    const {setFinalAmmount}= useContext(Shop)
+    const {finalAmmount}= useContext(Shop)
+
     const cambioContadormas= () =>{
-        console.log(Stock)
-        console.log(number)
           if(number<Stock){
             setNumber(number+1)
             modifyItem(producto,number+1)
+            setEstadoA(estadoA+1)
+            setFinalAmmount(finalAmmount+producto.price)
             
         }else{
             Swal.fire({
@@ -30,7 +33,8 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
         if( number>1){
             setNumber(number-1)
             modifyItem(producto,number-1)
-            
+            setEstadoA(estadoA-1)
+            setFinalAmmount(finalAmmount-producto.price)
         }else{
             Swal.fire({
                 icon: 'error',
@@ -55,7 +59,7 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
               Swal.fire(
                 'Deleted!',
                 'Your file has been deleted.',
-                'success',setEstadoA(cart.length-1)
+                'success',setEstadoA(estadoA-producto.quantity)
               )
             }
           })

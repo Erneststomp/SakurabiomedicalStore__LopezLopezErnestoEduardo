@@ -1,8 +1,10 @@
 import React, {createContext, useState} from 'react'
 export const Shop =createContext();
 const Shopprovider = ({children}) => {
-    const [estadoA, setEstadoA]=useState([])
+    const [estadoA, setEstadoA]=useState(0)
     const [cart , setCart]=useState([])
+    const [finalAmmount, setFinalAmmount]=useState(0)
+
     const addItem=(product, ammount)=>{
         const productoRepetido=isInCart(product)
         if(productoRepetido){
@@ -19,15 +21,11 @@ const Shopprovider = ({children}) => {
             setCart([...cart])
     }
 
-
-    const EliminateItem=(Eliminador)=>{
-        
+    const EliminateItem=(Eliminador)=>{  
         const newarrayitems= cart.filter(product => {
             return product.id !== Eliminador;
-          });
+          });           
           setCart(newarrayitems)
-          
-
     }
 
     const isInCart = (product)=>{
@@ -37,10 +35,13 @@ const Shopprovider = ({children}) => {
     const EraseCart =()=>{
         setCart([])
         setEstadoA([])
+        setFinalAmmount(0)
     }
 
+
+
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem,cart,EliminateItem,EraseCart, modifyItem}} >
+        <Shop.Provider value={{estadoA, setEstadoA, addItem,cart,EliminateItem,EraseCart, modifyItem, finalAmmount, setFinalAmmount}} >
             {children}
         </Shop.Provider>
     )
