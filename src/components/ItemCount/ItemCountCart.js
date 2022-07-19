@@ -56,6 +56,7 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
           }).then((result) => {
             if (result.isConfirmed) {
                 EliminateItem(Eliminador)
+                setFinalAmmount(finalAmmount-(producto.price*producto.quantity))
               Swal.fire(
                 'Deleted!',
                 'Your file has been deleted.',
