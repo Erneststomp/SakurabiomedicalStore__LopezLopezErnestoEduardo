@@ -1,5 +1,4 @@
 import React from 'react'
-import Itemcount from '../ItemCount/ItemCount';
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
 import './Items.css'
@@ -7,7 +6,7 @@ const Items = ({product}) => {
   const onAdd=(number)=>{
     Swal.fire('Agregaste '+ number+' a tu Carrito')
   }
-  const{id,title,price,image}=product
+  const{id,title,price,image,stock}=product
   const Navegar=useNavigate();
   const Navega= ()=>{
     Navegar(`/detail/${id}`)
@@ -23,6 +22,7 @@ const Items = ({product}) => {
             </div>
             <div className="" >
               <h5>{title}</h5>
+              <p className="text-muted" > Only: {stock} in Stock</p>
               <p className="text-muted" > Only: ${price}.00</p>
             </div>
           </div>

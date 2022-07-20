@@ -25,10 +25,10 @@ import { Shop } from "../Context/context";
                 <div className="collapse navbar-collapse"  id="navbarToggleExternalContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/">Home</Link></li>
-                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/electronics">Electronics</Link></li>
-                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/men's clothing">Men</Link></li>
-                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/women's clothing">Women</Link></li>
-                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/jewelery">Jewelery</Link></li>
+                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/Clothing">Clothing</Link></li>
+                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/Accessories">Accessories</Link></li>
+                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/OperationRoom">OperationRoom</Link></li>
+                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/category/Defibrillator">Defibrillator</Link></li>
                         <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"><Link to="/cart"><CartWidget style={{position:'absolute'}}/><div style={{display:'fixed', position:'absolute',padding:'0', margin:'0',color:'white'}}> {estadoA!==0?estadoA:''}</div></Link> </li>
                     </ul>
                 </div>

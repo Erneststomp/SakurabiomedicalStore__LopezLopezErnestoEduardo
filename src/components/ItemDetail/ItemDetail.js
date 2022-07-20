@@ -40,6 +40,7 @@ const ItemDetail = ({product}) => {
                 <h4>Price: ${product.price}</h4>
                 <p>{product.description}</p>
                 <p>{product.category}</p>
+                <p>In Stock: {product.stock}</p>
               </div> 
             </div>
             <div className="card" style={{padding:'5%'}} >
