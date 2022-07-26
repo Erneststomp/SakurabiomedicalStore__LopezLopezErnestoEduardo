@@ -17,26 +17,18 @@ const ItemDetailContainer = () => {
               const docSnap = await getDoc(docRef);
 
               if (docSnap.exists()) {
-                // console.log("Document data:", docSnap.data());
                 const response = {id: docSnap.id, ...docSnap.data()}
                 setProductDetail(response)
               } else {
-                // doc.data() will be undefined in this case
                 console.log("No such document!");
               }
-              // const response={id: docSnap.id, ...docSnap.data()}
-              // setProductDetail(response)
-              // setProductosFiltrados(response)
 
-            // const response = await fetch(`https://fakestoreapi.com/products/${params.productId}`)
-            // const data = await response.json();
-            
             } catch (error) {
                 console.log(error)
             }
         }
 
-          getProducts()
+    getProducts()
 
     },[])
   return (

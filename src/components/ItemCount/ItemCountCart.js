@@ -7,7 +7,6 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
     
     const [number,setNumber] = useState(initial);
     const {EliminateItem}= useContext(Shop)
-    const{cart}=useContext(Shop)
     const {setEstadoA}= useContext(Shop)
     const {estadoA}= useContext(Shop)
     const {modifyItem}= useContext(Shop)
@@ -42,7 +41,6 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
               })
         }
     }
-
 
     const EliminarCartItem=()=>{
 

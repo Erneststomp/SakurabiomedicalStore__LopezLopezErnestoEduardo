@@ -2,6 +2,7 @@ import { Shop } from '../Context/context'
 import ItemCountCart from '../ItemCount/ItemCountCart'
 import React, {  useContext } from 'react'
 import {useNavigate} from "react-router-dom";
+import guardarOrden from '../../firebase/submit';
 
 const Cart = ({product}) => {
     const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Cart = ({product}) => {
     const {addItem}= useContext(Shop)
     const {EraseCart}= useContext(Shop)
     const {estadoA}= useContext(Shop)
+    const {setEstadoA}= useContext(Shop)
     const {finalAmmount}= useContext(Shop)
     const onAdd=(number)=>{
       addItem(product,number)
@@ -21,18 +23,25 @@ const Cart = ({product}) => {
       navigate('/')
     }
 
+    const confirmarCompra = async ()=>{
+      const orderDetail={ order:{name: 'Ernesto Eduardo Lopez Lopez', direccion:"Monsdat, Catedral de Barbatos", total:finalAmmount, fechaDeCompra: new Date().toLocaleString(), cart}}
+      console.log(orderDetail)
+      guardarOrden(cart,orderDetail)
+      EraseAll()
+      setEstadoA(0)
+      navigate('/')
+    }
+
   if(estadoA!==0){
     return (
-    
       <div>
-
           <button style={{width:'200px', display:'flex', position: 'absolute', right: '0'}} className='boton' onClick={EraseAll}><h4>Empty Cart</h4></button>
           <ul style={{listStyleType: "none"}}>
               {cart.map(product=>{
                   return <li key={product.id}>
                           <div style={{paddingLeft:'5%', paddingRight:'5%', paddingTop:'4%', display:'inline-flex',width:'95%'}}>
                             <div style={{ }}> 
-                              <img  className="card" style={{width:'250px', height:'250px'}} src={product.image}/> 
+                              <img  className="card" style={{width:'250px', height:'250px'}} alt={{}} src={product.image}/> 
                             </div>
                             <div style={{width:'90%' , height:'250px'}}>
                                   <div className="card" style={{height:'250px'}}>
@@ -53,7 +62,7 @@ const Cart = ({product}) => {
                             <div style={{width:'100%' , height:'250px'}}>
                                   <div className="card" style={{height:'100px'}}>
                                     <h4 style={{}}>Total: ${finalAmmount}</h4>
-                                    <button style={{ width:'200px'}}>Terminar Compra</button>
+                                    <button style={{ width:'200px'}} onClick={confirmarCompra}>Terminar Compra</button>
                                   </div>
                               </div>
                           </div> 
@@ -65,7 +74,6 @@ const Cart = ({product}) => {
         <h1>Carrito Vacio</h1>
         <h2>Vuelva a la Tienda y seleccione sus articulos favoritos</h2>
         <button  onClick={IrATienda} style={{ width:'200px'}}>Regresar</button>
-
       </div>
     )
   }

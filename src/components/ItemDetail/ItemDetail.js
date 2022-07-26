@@ -44,7 +44,7 @@ const ItemDetail = ({product}) => {
               </div> 
             </div>
             <div className="card" style={{padding:'5%'}} >
-                {!agregados ?<Itemcount  Stock={10} initial={1} onAdd={onAdd}/>
+                {!agregados ?<Itemcount  Stock={product.stock} initial={1} onAdd={onAdd}/>
                 :
                 <button onClick={IrACarrito}>  Ir a Carrito</button>
               }
