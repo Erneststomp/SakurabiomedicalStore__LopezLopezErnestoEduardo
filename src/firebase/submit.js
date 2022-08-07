@@ -1,7 +1,7 @@
 import { addDoc, updateDoc, doc, getDoc, writeBatch , collection} from "firebase/firestore"
 import { db } from "./config"
 import Swal from "sweetalert2"
-const guardarOrden = async (cart, orderDetail,finalAmmount) => {
+const guardarOrden = async (cart, orderDetail,finalAmmount,EraseCart) => {
 
     
     const batch = writeBatch(db)
@@ -12,8 +12,7 @@ const guardarOrden = async (cart, orderDetail,finalAmmount) => {
     let newStock=[]
     let cartid=[]
     let carlen=cart.length
-    console.log(orderDetail.fechaDeCompra)
-    console.log(orderDetail)
+  
     cart.forEach((cart) => {
         getDoc(doc(db, 'products', cart.id))
         .then(async (documentSnapshot) => {
@@ -44,7 +43,10 @@ const guardarOrden = async (cart, orderDetail,finalAmmount) => {
                     `<h2 id="swal-input1" class="swal2-input"> Fecha de Compra: ${orderDetail.order.fechaDeCompra} </h2>`,
                     allowOutsideClick: false,
                     allowEscapeKey: false,
-                    }).then( 
+                    }).then((result)=>{ if (result.isConfirmed) {
+                        EraseCart()
+                        
+                      }}
                        
                     ) 
 
@@ -57,7 +59,11 @@ const guardarOrden = async (cart, orderDetail,finalAmmount) => {
                 newStock[cont] = product.stock-cart.quantity
             }
             else{
-                console.log(`Lo sentimos, el stock de los siguientes artiuclos ha cambiado: ${outOfStock}`)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `Items Out of Stock! ${outOfStock}`,
+                  })
             }
         })
     })

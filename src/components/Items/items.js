@@ -1,16 +1,14 @@
 import React from 'react'
-import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom';
 import './Items.css'
 const Items = ({product}) => {
-  const onAdd=(number)=>{
-    Swal.fire('Agregaste '+ number+' a tu Carrito')
-  }
+ 
   const{id,title,price,image,stock}=product
   const Navegar=useNavigate();
   const Navega= ()=>{
     Navegar(`/detail/${id}`)
   }  
+  //funcion que despliega la imagen de los articulos para la pagina de inciio o las paginas de clases
   let StockProof=<p className="text-muted" > Only: {stock} in Stock</p>
   if(stock===0){
     StockProof=<p className="text-muted" > Product Out of Stock</p>

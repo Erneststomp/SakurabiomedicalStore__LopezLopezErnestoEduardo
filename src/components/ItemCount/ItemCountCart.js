@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import { Shop } from '../Context/context';
 
 const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
-    
+    //cargade variables a implementar
     const [number,setNumber] = useState(initial);
     const {EliminateItem}= useContext(Shop)
     const {setEstadoA}= useContext(Shop)
@@ -12,13 +12,16 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
     const {modifyItem}= useContext(Shop)
     const {setFinalAmmount}= useContext(Shop)
     const {finalAmmount}= useContext(Shop)
-
+    const {cart}=useContext(Shop)
+//funciones que permiten modificar la cantidad de elementos a comprar dentro del mismo carrito, cafa vez que se modifique la cantidad de un articulo, este lo guardara en el local storage para mantenerlo hasta finalizar la compra
     const cambioContadormas= () =>{
           if(number<Stock){
             setNumber(number+1)
             modifyItem(producto,number+1)
             setEstadoA(estadoA+1)
             setFinalAmmount(finalAmmount+producto.price)
+            
+            localStorage.setItem('cartItems', JSON.stringify(cart));
             
         }else{
             Swal.fire({
@@ -34,6 +37,8 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
             modifyItem(producto,number-1)
             setEstadoA(estadoA-1)
             setFinalAmmount(finalAmmount-producto.price)
+            
+            localStorage.setItem('cartItems', JSON.stringify(cart));
         }else{
             Swal.fire({
                 icon: 'error',
@@ -41,8 +46,9 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
               })
         }
     }
-
-    const EliminarCartItem=()=>{
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//Funcion que permite eliminar un articulo del carrito, al eliminar algun articulo, se guarda en localstorage el cambio
+const EliminarCartItem=()=>{
 
         Swal.fire({
             title: 'Desea eliminar el articulo de su carrito?',
@@ -60,6 +66,7 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
                 'Your file has been deleted.',
                 'success',setEstadoA(estadoA-producto.quantity)
               )
+              localStorage.setItem('cartItems', JSON.stringify(cart));
             }
           })
 

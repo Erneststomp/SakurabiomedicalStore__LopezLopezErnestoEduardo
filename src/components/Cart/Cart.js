@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 
 
 const Cart = ({product}) => {
+  //carga de funciones y datos que se suaran
     const navigate = useNavigate();
     const{cart}=useContext(Shop)
     const {addItem}= useContext(Shop)
@@ -12,23 +13,24 @@ const Cart = ({product}) => {
     const {estadoA}= useContext(Shop)
     const {finalAmmount}= useContext(Shop)
     const {setConfirmOrder}= useContext(Shop)
+    //llamada a la funcion de context que agrega el articulo al carrito
     const onAdd=(number)=>{
       addItem(product,number)
     }
+    // llamada a la funcion de context que limpia todos los aticulos del carrito
     const EraseAll=()=>{
       EraseCart()
     }
-
-
+    //llamada a la redireccion a la pagina de inicio
     const IrATienda =()=>{
       navigate('/')
     }
-
+    //llamada a la redirreciion de confirmar compra, si no se realiza a traves de este boton, no se puede accesar a dicha pagina y mostrara un error 404
     const confirmarCompra = async ()=>{
       setConfirmOrder(1)
       navigate('/confirm')
     }
-
+    //en caso de que exista algun elemento dentro del carrito este mostrara dicho/s articulos al usuario, el precio total cantidad y precio unitario, el stock no se actualiza cosntantemente, por lo que no se puede saber si el artiuclo aun tiene stock suficiente hasta indicar que se realizara la compra
   if(estadoA!==0){
     return (
       <div>
@@ -69,6 +71,7 @@ const Cart = ({product}) => {
       </div>
     )
   }else{
+    //en caso de que el carrito se encuentre vacio se pedira que se regrese a la pagina de inicio de la tienda
   return(
       <div style={{margin:'100px'}}>
         <h1>The Cart is empty</h1>

@@ -1,5 +1,4 @@
 import Itemcount from '../ItemCount/ItemCount'
-import Swal from 'sweetalert2'
 import {useNavigate} from "react-router-dom";
 import React, { useState, useContext } from 'react'
 import { Shop } from '../Context/context';
@@ -13,15 +12,14 @@ const ItemDetail = ({product}) => {
   const {estadoA}= useContext(Shop)
   const {setFinalAmmount}= useContext(Shop)
   const {finalAmmount}= useContext(Shop)
-
   localStorage.setItem('cartItems', JSON.stringify(cart));
   
   const onAdd=(number)=>{
-    Swal.fire('Agregaste '+ number+' a tu Carrito')
-    setAgregados(number)
-    setEstadoA(parseInt(estadoA,10)+number)
-    setFinalAmmount(parseInt(finalAmmount,10)+(product.price*number))
-    addItem(product,number)
+      
+      setAgregados(number)
+      setEstadoA(parseInt(estadoA,10)+number)
+      setFinalAmmount(parseInt(finalAmmount,10)+(product.price*number))
+      addItem(product,number)
   }
 
   const IrACarrito =()=>{
@@ -32,7 +30,7 @@ const ItemDetail = ({product}) => {
   }
  let proofStock=<h5>In Stock: {product.stock}</h5>
  if(product.stock===0){
-    proofStock=<h5>Producto out of Stock</h5>
+    proofStock=<h5>Product out of Stock</h5>
  }
 
 

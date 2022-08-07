@@ -9,6 +9,7 @@ const NotFoud = () => {
   }
 
   return (
+    //funcion que muestra si una ruta especifica existe o no, de no hacerlo mostrara un boton que permite redireccionar a la pagina inicial
     <div style={{margin:'100px'}}>
         <h1>Error 404</h1>
         <h2>Page not Found</h2>

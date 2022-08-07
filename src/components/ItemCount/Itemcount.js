@@ -4,11 +4,13 @@ import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 
 const Itemcount = ({onAdd, Stock, initial}) => {
+    //carga de funciones a usar, 
     const navigate = useNavigate();
     const [number,setNumber] = React.useState(initial);
     const returnPage=()=>{
         navigate('/')
       }
+    //funcion que previene el agregar mas articulos de los disponibles o menos de 0, de intentarlo muestra alerta de sweetalert
     const cambioContadormas= () =>{
         Stock>number?setNumber(number+1):Swal.fire({
             icon: 'error',
@@ -21,7 +23,7 @@ const Itemcount = ({onAdd, Stock, initial}) => {
             text: 'Compra minima: '+initial,
           })
     }   
-
+    //funcion que permite al boton Add existir mientras exista stock
     let buttonProof=<button className="btn btn-primary btn-lg button__align" onClick={()=>onAdd(number)}><p>Add to Cart</p></button>
     if(Stock===0){
         buttonProof=<button id="BtnRegresar" className="btn btn-danger btn-lg button__align" onClick={returnPage}>Out of Stock Go Back</button>

@@ -7,6 +7,7 @@ const ConfirmOrder = () => {
   const {cart}= useContext(Shop)
   const {finalAmmount}= useContext(Shop)
   const navigate = useNavigate();
+  const {EraseCart}= useContext(Shop)
   const [hiddename, setHiddenname]=useState('')
   const [hiddeAdress, setHiddenAdress]=useState('')
   const [hiddenphone, setHiddennphone]=useState('')
@@ -22,11 +23,10 @@ const ConfirmOrder = () => {
 
     if(data.fullname!==''&&data.adress!==''&&data.contact!==''&& isNaN(data.contact)===false && data.contact.length===10 && data.fullname.length>6 &&data.adress.length>6){
         const orderDetail={ order:{data, total:finalAmmount, fechaDeCompra: new Date().toLocaleString(), cart}}
-        guardarOrden(cart,orderDetail,finalAmmount)
+        guardarOrden(cart,orderDetail,finalAmmount,EraseCart)
     }
-    
-
 }
+
 
   const returnPage=()=>{
     setConfirmOrder(0)

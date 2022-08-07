@@ -1,18 +1,31 @@
 import React, {createContext, useState} from 'react'
+import Swal from 'sweetalert2';
 export const Shop =createContext();
 const Shopprovider = ({children}) => {
     const [estadoA, setEstadoA]=useState(0)
     const [cart , setCart]=useState([])
     const [finalAmmount, setFinalAmmount]=useState(0)
     const [confirmOrder, setConfirmOrder]=useState(0)
-
+    //funcion que comprueba  si ya se cuenta con dicho tiem en el carrito, no permite agregar mas si no hay stock suficiente con la suma de la cantidad en el carrito mas la nueva
     const addItem=(product, ammount)=>{
         const productoRepetido=isInCart(product)
         if(productoRepetido){
+            if((productoRepetido.quantity+ammount)<=product.stock){
             productoRepetido.quantity+=ammount
             setCart([...cart])
+            Swal.fire('Added '+ ammount+' to your Cart')
+        }else{
+                setEstadoA(parseInt(estadoA,10))
+                setFinalAmmount(parseInt(finalAmmount,10))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Not Enough Stock',
+                    text: 'You already have this item in your cart, you are tying to add mote items than those in stock',
+                  })
+            }
         }
         else{
+            //en caso de que el item no exista en el carrito lo agrega
         setCart([...cart,{...product,quantity:ammount}])
         }
         
