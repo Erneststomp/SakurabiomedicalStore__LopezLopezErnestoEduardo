@@ -11,7 +11,10 @@ const Items = ({product}) => {
   const Navega= ()=>{
     Navegar(`/detail/${id}`)
   }  
-
+  let StockProof=<p className="text-muted" > Only: {stock} in Stock</p>
+  if(stock===0){
+    StockProof=<p className="text-muted" > Product Out of Stock</p>
+  }
   return (
     <div onClick={Navega} > 
       <span className="col-lg-4 card Tarjetero" style={{width:'100%', height:'100%', display:'block'}}>
@@ -22,7 +25,7 @@ const Items = ({product}) => {
             </div>
             <div className="" >
               <h5>{title}</h5>
-              <p className="text-muted" > Only: {stock} in Stock</p>
+              {StockProof}
               <p className="text-muted" > Only: ${price}.00</p>
             </div>
           </div>

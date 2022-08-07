@@ -71,10 +71,10 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
 
     <div>
         <div className='displaybutton'>
-            <button className='boton' onClick={EliminarCartItem}><h3>Eliminar</h3></button>
-            <button className='boton' onClick={cambioContadormenos}><h2>-</h2></button>
-            <h2>{number}</h2>
-            <button className='boton' onClick={cambioContadormas}><h2>+</h2></button>
+            <button style={{ margin:'10px'}} className="btn btn-danger btn-lg button__align" onClick={EliminarCartItem}><h3>Delete</h3></button>
+            <button style={{ margin:'10px'}} className="btn btn-primary btn-lg button__align" onClick={cambioContadormenos}><h2>-</h2></button>
+            <h2 style={{ margin:'10px', alignItems:'center', alignSelf:'center', alignContent:'cemter'}} >{number}</h2>
+            <button className="btn btn-primary btn-lg button__align" onClick={cambioContadormas}><h2>+</h2></button>
         </div>
     </div>
   )
