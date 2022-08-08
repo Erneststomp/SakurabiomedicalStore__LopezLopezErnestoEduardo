@@ -55,13 +55,10 @@ const allcheck=()=>{
     if(document.getElementById("EMAIL2").value===''){
         setHiddenemail("")
     }
-    
-
     allcheck()
-   
   }
   const namecheck=()=>{
-    if( document.getElementById("NAME").value.length<6){
+    if( document.getElementById("NAME").value.length<6&&document.getElementById("NAME").value!==''){
         setHiddenname('Fullname cant be less than 6 character')
         
     }
@@ -83,7 +80,7 @@ const allcheck=()=>{
   }
 
   const phonecheck=()=>{
-    if(document.getElementById("PHONENUMBER").value.length<10||isNaN(document.getElementById("PHONENUMBER").value)===true){
+    if((document.getElementById("PHONENUMBER").value.length<10&&document.getElementById("PHONENUMBER").value.length>0)||isNaN(document.getElementById("PHONENUMBER").value)===true){
         setHiddennphone("Phone number must be 10 numbers length and it can only be numerical")
         document.getElementById("BtnFinalizar").disabled=true
     }
@@ -113,7 +110,7 @@ const allcheck=()=>{
                     <div>
                         <div>
                             <label>Email:  </label>
-                            <input id="EMAIL1" name="Email" type="email" placeholder="Example: fake@mail.com"  className="form-control" required/>
+                            <input id="EMAIL1" name="Email" type="email" placeholder="Example: fake@mail.com" onChange={emailcheck} className="form-control" required/>
                         </div>
                         <div><label>Confirm Email: <p style={{color:'red'}}>{hiddenemail}</p></label>
                             <input id="EMAIL2" name="Email" type="email" placeholder="Example: fake@mail.com" onChange={emailcheck} className="form-control" required/>

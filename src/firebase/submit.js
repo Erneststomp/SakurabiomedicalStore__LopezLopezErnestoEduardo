@@ -45,13 +45,13 @@ const guardarOrden = async (cart, orderDetail,finalAmmount,EraseCart) => {
                     allowEscapeKey: false,
                     }).then((result)=>{ if (result.isConfirmed) {
                         EraseCart()
-                        
+                        window.location = '/'
                       }}
                        
                     ) 
 
 
-                
+               
             } 
             else if(outOfStock.length === 0){
                 cartid[cont]=cart.id
@@ -59,11 +59,13 @@ const guardarOrden = async (cart, orderDetail,finalAmmount,EraseCart) => {
                 newStock[cont] = product.stock-cart.quantity
             }
             else{
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: `Items Out of Stock! ${outOfStock}`,
-                  })
+                for(let i=0;i<outOfStock.length;i++ ){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `Item without enough stock: ${outOfStock[i].title}`,
+                    })
+                }
             }
         })
     })
