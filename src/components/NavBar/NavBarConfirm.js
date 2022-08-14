@@ -25,7 +25,7 @@ import { Shop } from "../Context/Context";
                 </button>
 
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"> <button style={{backgroundColor: 'transparent', border:'0px'}} onClick={change}><Link to="/cart">Volver</Link></button></li>
+                        <li className="NavBar__Fromat nav-item nav__ul__border ms-1 body__header__border body__header__nav__ul__textcolor"> <button style={{backgroundColor: 'transparent', border:'0px'}} onClick={change}><Link to="/ElementsInCart">Volver</Link></button></li>
                     </ul>
             </div>
         </nav>

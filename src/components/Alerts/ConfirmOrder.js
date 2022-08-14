@@ -4,7 +4,7 @@ import { Shop } from '../Context/Context';
 import guardarOrden from '../../Firebase/Submit';
 const ConfirmOrder = () => {
   const {setConfirmOrder}= useContext(Shop)
-  const {cart}= useContext(Shop)
+  const {CartVariable}= useContext(Shop)
   const {finalAmmount}= useContext(Shop)
   const navigate = useNavigate();
   const {EraseCart}= useContext(Shop)
@@ -22,15 +22,15 @@ const ConfirmOrder = () => {
     };
 
     if(data.fullname!==''&&data.adress!==''&&data.contact!==''&& isNaN(data.contact)===false && data.contact.length===10 && data.fullname.length>6 &&data.adress.length>6){
-        const orderDetail={ order:{data, total:finalAmmount, fechaDeCompra: new Date().toLocaleString(), cart}}
-        guardarOrden(cart,orderDetail,finalAmmount,EraseCart)
+        const orderDetail={ order:{data, total:finalAmmount, fechaDeCompra: new Date().toLocaleString(), CartVariable}}
+        guardarOrden(CartVariable,orderDetail,finalAmmount,EraseCart)
     }
 }
 
 
   const returnPage=()=>{
     setConfirmOrder(0)
-    navigate('/cart')
+    navigate('/ElementsInCart')
   }
 
   const handleSubmit = event => {

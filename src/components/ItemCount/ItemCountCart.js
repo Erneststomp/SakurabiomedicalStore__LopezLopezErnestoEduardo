@@ -12,7 +12,7 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
     const {modifyItem}= useContext(Shop)
     const {setFinalAmmount}= useContext(Shop)
     const {finalAmmount}= useContext(Shop)
-    const {cart}=useContext(Shop)
+    const {CartVariable}=useContext(Shop)
 //funciones que permiten modificar la cantidad de elementos a comprar dentro del mismo carrito, cafa vez que se modifique la cantidad de un articulo, este lo guardara en el local storage para mantenerlo hasta finalizar la compra
     const cambioContadormas= () =>{
           if(number<Stock){
@@ -21,7 +21,7 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
             setEstadoA(estadoA+1)
             setFinalAmmount(finalAmmount+producto.price)
             
-            localStorage.setItem('cartItems', JSON.stringify(cart));
+            localStorage.setItem('CartVariableItems', JSON.stringify(CartVariable));
             
         }else{
             Swal.fire({
@@ -38,7 +38,7 @@ const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
             setEstadoA(estadoA-1)
             setFinalAmmount(finalAmmount-producto.price)
             
-            localStorage.setItem('cartItems', JSON.stringify(cart));
+            localStorage.setItem('CartVariableItems', JSON.stringify(CartVariable));
         }else{
             Swal.fire({
                 icon: 'error',
@@ -66,7 +66,7 @@ const EliminarCartItem=()=>{
                 'Your file has been deleted.',
                 'success',setEstadoA(estadoA-producto.quantity)
               )
-              localStorage.setItem('cartItems', JSON.stringify(cart));
+              localStorage.setItem('CartVariableItems', JSON.stringify(CartVariable));
             }
           })
 

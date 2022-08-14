@@ -7,12 +7,12 @@ const ItemDetail = ({product}) => {
   const navigate = useNavigate();
   const [agregados, setAgregados]=useState(0);
   const {addItem}= useContext(Shop)
-  const{cart}=useContext(Shop)
+  const{CartVariable}=useContext(Shop)
   const {setEstadoA}= useContext(Shop)
   const {estadoA}= useContext(Shop)
   const {setFinalAmmount}= useContext(Shop)
   const {finalAmmount}= useContext(Shop)
-  localStorage.setItem('cartItems', JSON.stringify(cart));
+  localStorage.setItem('CartVariableItems', JSON.stringify(CartVariable));
   
   const onAdd=(number)=>{
       
@@ -23,7 +23,7 @@ const ItemDetail = ({product}) => {
   }
 
   const IrACarrito =()=>{
-    navigate('/Cart')
+    navigate('/ElementsInCart')
   }
   const GoBack =()=>{
     navigate('/')

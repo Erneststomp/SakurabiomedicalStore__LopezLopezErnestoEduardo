@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 const Cart = ({product}) => {
   //carga de funciones y datos que se suaran
     const navigate = useNavigate();
-    const{cart}=useContext(Shop)
+    const{CartVariable}=useContext(Shop)
     const {addItem}= useContext(Shop)
     const {EraseCart}= useContext(Shop)
     const {estadoA}= useContext(Shop)
@@ -38,7 +38,7 @@ const Cart = ({product}) => {
           <button style={{width:'200px', display:'block', alignItems:'center', position: 'relative', marginRight:'auto' ,marginLeft:'auto' }}className="btn btn-danger btn-lg button__align" onClick={EraseAll}><h4>Delete Cart</h4></button>
         </div>
           <ul style={{listStyleType: "none"}}>
-              {cart.map(product=>{
+              {CartVariable.map(product=>{
                   return <li key={product.id}>
                           <div style={{paddingLeft:'5%', paddingRight:'5%', paddingTop:'4%', display:'inline-flex',width:'95%'}}>
                             <div className="card" style={{height:'350px'}}> 

@@ -15,7 +15,7 @@ const MainNav = () => {
     const {RecuperarCart}=useContext(Shop)
     //funcion que verifica los archivos locales para mantener los artiuclos del carrito
     useEffect(() => {
-        let items = JSON.parse(localStorage.getItem('cartItems'));
+        let items = JSON.parse(localStorage.getItem('CartVariableItems'));
         if (items) {
             RecuperarCart(items)
         }
@@ -27,7 +27,7 @@ const MainNav = () => {
            <Route path='/' element={<ItemListContainer/>}></Route>
            <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
            <Route path='/detail/:productId' element={<ItemDetailContainer/>}></Route>
-           <Route path='/cart' element={<Cart/>}></Route>
+           <Route path='/ElementsInCart' element={<Cart/>}></Route>
            <Route path='*' element={<NotFoud/>}></Route>
            
        </Routes>
