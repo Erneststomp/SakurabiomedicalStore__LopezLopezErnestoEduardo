@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore";
-import { db } from '../../firebase/config';
+import { db } from '../../Firebase/Config';
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2';
 

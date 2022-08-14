@@ -5,7 +5,7 @@ import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
 import NavBar from '../NavBar/NavBar'
 import NotFoud from '../NotFound/NotFoud'
-import { Shop } from '../Context/context'
+import { Shop } from '../Context/Context'
 import NavBarConfirm from '../NavBar/NavBarConfirm'
 import ConfirmOrder from '../Alerts/ConfirmOrder'
 

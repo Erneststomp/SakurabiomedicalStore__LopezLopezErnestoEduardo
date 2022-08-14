@@ -3,7 +3,7 @@ import './NavBar.css'
 import Logo from "../assets/Images/sakura_biomedical-03.png";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
-import { Shop } from "../Context/context";
+import { Shop } from "../Context/Context";
 
 
  const NavBar = () => { 

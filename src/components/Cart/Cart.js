@@ -1,4 +1,4 @@
-import { Shop } from '../Context/context'
+import { Shop } from '../Context/Context'
 import ItemCountCart from '../ItemCount/ItemCountCart'
 import React, {  useContext} from 'react'
 import {useNavigate} from "react-router-dom";

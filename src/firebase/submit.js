@@ -1,5 +1,5 @@
 import { addDoc, updateDoc, doc, getDoc, writeBatch , collection} from "firebase/firestore"
-import { db } from "./config"
+import { db } from "./Config"
 import Swal from "sweetalert2"
 const guardarOrden = async (cart, orderDetail,finalAmmount,EraseCart) => {
 

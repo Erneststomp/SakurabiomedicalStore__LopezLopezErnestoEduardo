@@ -1,5 +1,5 @@
 import './App.css';
-import Shopprovider from './components/Context/context';
+import Shopprovider from './components/Context/Context';
 import MainNav from './components/Navigation/MainNav';
 
 

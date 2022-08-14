@@ -1,7 +1,7 @@
 import Itemcount from '../ItemCount/ItemCount'
 import {useNavigate} from "react-router-dom";
 import React, { useState, useContext } from 'react'
-import { Shop } from '../Context/context';
+import { Shop } from '../Context/Context';
 
 const ItemDetail = ({product}) => {
   const navigate = useNavigate();
