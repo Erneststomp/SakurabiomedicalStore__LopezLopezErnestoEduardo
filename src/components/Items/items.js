@@ -19,7 +19,7 @@ const Items = ({product}) => {
         <div className="text-center card-box" style={{position:'relative', display:'block',alignItems:'',justifyContent:'center'}}>
           <div className="member-card pt-2 pb-2">
             <div className="thumb-lg member-thumb mx-auto" style={{height:'50%'}}>
-              <img src={image} className="img-thumbnail" style={{height:'300px'}} alt="profile-image" />
+              <img src={image} className="img-thumbnail" style={{height:'300px'}} alt="Article" />
             </div>
             <div className="" >
               <h5>{title}</h5>
