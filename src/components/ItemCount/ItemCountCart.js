@@ -1,7 +1,7 @@
 import React,{useState , useContext} from 'react'
 import './ItemCount.css'
 import Swal from 'sweetalert2'
-import { Shop } from '../Context/Context';
+import { Shop } from '../Context/Context.js';
 
 const ItemCountCart = ({Stock, initial, onAdd, Eliminador,producto}) => {
     //cargade variables a implementar

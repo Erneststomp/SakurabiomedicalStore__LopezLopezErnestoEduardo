@@ -1,6 +1,6 @@
 import React, {  useContext, useState } from 'react'
 import {useNavigate} from "react-router-dom";
-import { Shop } from '../Context/Context';
+import { Shop } from '../Context/Context.js';
 import guardarOrden from '../../Firebase/Submit';
 const ConfirmOrder = () => {
   const {setConfirmOrder}= useContext(Shop)
