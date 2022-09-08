@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 export const Shop =createContext();
 const Shopprovider = ({children}) => {
     const [estadoA, setEstadoA]=useState(0)
-    const [CartVariable , setCart]=useState([])
+    const [CartVariable , setCartVariable]=useState([])
     const [finalAmmount, setFinalAmmount]=useState(0)
     const [confirmOrder, setConfirmOrder]=useState(0)
     //funcion que comprueba  si ya se cuenta con dicho tiem en el carrito, no permite agregar mas si no hay stock suficiente con la suma de la cantidad en el carrito mas la nueva
@@ -12,7 +12,7 @@ const Shopprovider = ({children}) => {
         if(productoRepetido){
             if((productoRepetido.quantity+ammount)<=product.stock){
             productoRepetido.quantity+=ammount
-            setCart([...CartVariable])
+            setCartVariable([...CartVariable])
             Swal.fire('Added '+ ammount+' to your Cart')
         }else{
                 setEstadoA(parseInt(estadoA,10))
@@ -26,12 +26,12 @@ const Shopprovider = ({children}) => {
         }
         else{
             //en caso de que el item no exista en el carrito lo agrega
-        setCart([...CartVariable,{...product,quantity:ammount}])
+        setCartVariable([...CartVariable,{...product,quantity:ammount}])
         }
         
     }
      const  RecuperarCart=(items)=>{
-        setCart([...items])
+        setCartVariable([...items])
         let newAmmount=Object.keys(items).length
         
         let totalammount=0;
@@ -49,14 +49,14 @@ const Shopprovider = ({children}) => {
 
     const modifyItem=(product, number)=>{
             product.quantity=number
-            setCart([...CartVariable])
+            setCartVariable([...CartVariable])
     }
 
     const EliminateItem=(Eliminador)=>{  
         const newarrayitems= CartVariable.filter(product => {
             return product.id !== Eliminador;
           });           
-          setCart(newarrayitems)
+          setCartVariable(newarrayitems)
           localStorage.setItem('CartVariableItems', JSON.stringify(newarrayitems));
     }
 
@@ -65,7 +65,7 @@ const Shopprovider = ({children}) => {
     }
 
     const EraseCart =()=>{
-        setCart([])
+        setCartVariable([])
         setEstadoA([])
         setFinalAmmount(0)
         localStorage.setItem('CartVariableItems', JSON.stringify([]));
