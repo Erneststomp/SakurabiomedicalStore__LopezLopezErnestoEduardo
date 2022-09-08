@@ -1,0 +1,42 @@
+.topnav {
+    background-color: rgb(228, 57, 57);
+    overflow: hidden;
+    max-height: 45 0px;
+  }
+
+.NavBar__Fromat a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.NavBar__Fromat a:hover {
+  background-color: #aa0404;
+  color: rgb(255, 255, 255);
+}
+
+.logo__size{
+    width: 250px;
+    padding-left: 5%;
+    padding-right: 2cm;
+}
+
+.items_align{
+  display: flex;
+  align-items: baseline;
+}
+.brand__baseline{
+  position: relative;
+  align-items: baseline;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.navbar_position{
+  align-items: baseline;
+  margin-top: auto;
+  margin-bottom: auto;
+}
