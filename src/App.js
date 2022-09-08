@@ -1,6 +1,6 @@
 import './App.css';
-import Shopprovider from './Components/Context/Context';
-import MainNav from './Components/Navigation/MainNav';
+import Shopprovider from 'Components/Context/Context';
+import MainNav from 'Components/Navigation/MainNav';
 
 
 
